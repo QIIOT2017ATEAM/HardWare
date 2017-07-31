@@ -32,10 +32,11 @@ if __name__ == '__main__':
             # Use a copy() to get the copy of the set, avoiding 'set change size during iteration' error
             # Create CSV message "'realtime', time, temp, SN1, SN2, SN3, SN4, PM25\n"
 
+
             #temp
             raw = int(open("/sys/bus/iio/devices/iio:device0/in_voltage0_raw").read())
             v=5*0.000244140625*raw
-
+###
 
             epoch_time = int(time())    # epoch time   @@normal
             real_time = datetime.datetime.now()
