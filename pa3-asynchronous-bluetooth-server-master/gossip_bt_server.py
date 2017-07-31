@@ -49,16 +49,16 @@ if __name__ == '__main__':
 
 
             msg = ""
-            if args.output_format == "csv":
+            if args.output_format == "csv":   #@@@ we dont use this form
                 msg = "%f, %d, %f, %f, %f, %f, %f, %f" % (real_time, "0", SN1, SN2, SN3, SN4, PM25)
             elif args.output_format == "json":
                 output = {'type': '1',       # 1=currently time / 2=history time
                           'time': epoch_time,
                           'temp': round(temp,2),
-                          'SN1': round(SN1,2),
-                          'SN2': round(SN2,2),
-                          'SN3': round(SN3,2),
-                          'SN4': round(SN4,2),
+                          'CO': round(SN1,2),
+                          'CO2': round(SN2,2),
+                          'SO2': round(SN3,2),
+                          'O3': round(SN4,2),
                           'PM25': round(PM25,2)}
                 msg = json.dumps(output)
             try:
