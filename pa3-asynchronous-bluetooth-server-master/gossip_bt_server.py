@@ -54,12 +54,12 @@ if __name__ == '__main__':
             elif args.output_format == "json":
                 output = {'type': '1',       # 1=currently time / 2=history time
                           'time': epoch_time,
-                          'temp': temp,
-                          'SN1': SN1,
-                          'SN2': SN2,
-                          'SN3': SN3,
-                          'SN4': SN4,
-                          'PM25': PM25}
+                          'temp': round(temp,2),
+                          'SN1': round(SN1,2),
+                          'SN2': round(SN2,2),
+                          'SN3': round(SN3,2),
+                          'SN4': round(SN4,2)
+                          'PM25': round(PM25,2)}
                 msg = json.dumps(output)
             try:
                 client_handler.send(msg + '\n')
