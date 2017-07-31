@@ -42,10 +42,10 @@ if __name__ == '__main__':
 
             msg = ""
             if args.output_format == "csv":
-                msg = "realtime, %d, %f, %f, %f, %f, %f, %f" % (epoch_time, temp, SN1, SN2, SN3, SN4, PM25)
+                msg = "%f, %d, %f, %f, %f, %f, %f, %f" % (real_time, "0", SN1, SN2, SN3, SN4, PM25)
             elif args.output_format == "json":
                 output = {'type': '1',       # 1=currently time / 2=history time
-                          'time': real_time,   
+                          'time': real_time,
                           'SN1': SN1,
                           'SN2': SN2,
                           'SN3': SN3,
