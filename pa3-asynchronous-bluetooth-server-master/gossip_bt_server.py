@@ -55,6 +55,6 @@ if __name__ == '__main__':
             except Exception as e:
                 BTError.print_error(handler=client_handler, error=BTError.ERR_WRITE, error_message=repr(e))
                 client_handler.handle_close()
-
+    #testtestestestet
             # Sleep for 3 seconds
         sleep(3)
