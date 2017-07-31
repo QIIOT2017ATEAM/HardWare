@@ -33,13 +33,13 @@ if __name__ == '__main__':
             # Create CSV message "'realtime', time, temp, SN1, SN2, SN3, SN4, PM25\n"
 
             #temp
-            raw = int(open("/sys/bus/iio/devices/iio:device0/in_voltage0_raw").read())
-            v=5*0.000244140625*raw
-
+            #raw = int(open("/sys/bus/iio/devices/iio:device0/in_voltage0_raw").read())
+            #v=5*0.000244140625*raw
+            #t=(1000*v)-642
 
             epoch_time = int(time())    # epoch time   @@normal
             real_time = datetime.datetime.now()
-            temp = (1000*v)-642     # random temperature
+            temp = uniform(20, 30)     # random temperature
             SN1 = uniform(40, 50)       # random SN1 value
             SN2 = uniform(60, 70)       # random SN2 value
             SN3 = uniform(80, 90)       # random SN3 value
@@ -53,7 +53,7 @@ if __name__ == '__main__':
             elif args.output_format == "json":
                 output = {'type': '1',       # 1=currently time / 2=history time
                           'time': epoch_time,
-                          'temp':temp
+                          'temp': temp
                           'SN1': SN1,
                           'SN2': SN2,
                           'SN3': SN3,
