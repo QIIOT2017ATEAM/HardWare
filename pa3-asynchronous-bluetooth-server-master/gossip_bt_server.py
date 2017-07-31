@@ -58,7 +58,7 @@ if __name__ == '__main__':
                           'SN1': round(SN1,2),
                           'SN2': round(SN2,2),
                           'SN3': round(SN3,2),
-                          'SN4': round(SN4,2)
+                          'SN4': round(SN4,2),
                           'PM25': round(PM25,2)}
                 msg = json.dumps(output)
             try:
