@@ -56,7 +56,7 @@ if __name__ == '__main__':
                           'time': epoch_time,
                           'temp': round(temp,2),
                           'CO': round(SN1,2),
-                          'CO2': round(SN2,2),
+                          'NO2': round(SN2,2),
                           'SO2': round(SN3,2),
                           'O3': round(SN4,2),
                           'PM25': round(PM25,2)}
