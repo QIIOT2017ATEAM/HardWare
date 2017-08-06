@@ -62,14 +62,14 @@ if __name__ == '__main__':
             msg = "real-time, {}, {}, {}, {}, {}, {}, {}".format(epoch_time, temp, SN1, SN2, SN3, SN4, PM25)
         elif args.output_format == "json":
             # Create JSON message.
-            output = {'type': 'real-time',
+            output = {'type': '1',       # 1=currently time / 2=history time
                       'time': epoch_time,
-                      'temp': temp,
-                      'SN1': SN1,
-                      'SN2': SN2,
-                      'SN3': SN3,
-                      'SN4': SN4,
-                      'PM25': PM25}
+                      'temp': round(temp,2),
+                      'CO': round(SN1,2),
+                      'NO2': round(SN2,2),
+                      'SO2': round(SN3,2),
+                      'O3': round(SN4,2),
+                      'PM25': round(PM25,2)}
             msg = json.dumps(output)
 
         # Attach a new line character at the end of the message
