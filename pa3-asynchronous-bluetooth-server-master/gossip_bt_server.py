@@ -41,11 +41,11 @@ if __name__ == '__main__':
             epoch_time = int(time())    # epoch time   @@normal
             real_time = datetime.datetime.now()
             temp = (1000*v)-642      # random temperature
-            SN1 = uniform(40, 50)       # random SN1 value
-            SN2 = uniform(60, 70)       # random SN2 value
-            SN3 = uniform(80, 90)       # random SN3 value
-            SN4 = uniform(100, 110)     # random SN4 value
-            PM25 = uniform(120, 130)    # random PM25 value
+            SN1 = uniform(23, 28)       # random SN1 value
+            SN2 = uniform(16, 30)       # random SN2 value
+            SN3 = uniform(25, 40)       # random SN3 value
+            SN4 = uniform(30, 55)     # random SN4 value
+            PM25 = uniform(40, 55)    # random PM25 value
 
 
             msg = ""
