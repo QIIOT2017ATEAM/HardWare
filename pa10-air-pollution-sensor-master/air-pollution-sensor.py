@@ -62,14 +62,14 @@ if __name__ == '__main__':
             msg = "real-time, {}, {}, {}, {}, {}, {}, {}".format(epoch_time, temp, SN1, SN2, SN3, SN4, PM25)
         elif args.output_format == "json":
             # Create JSON message.
-            output = {'type': '1',       # 1=currently time / 2=history time
+            output = {'type': 'real-time',
                       'time': epoch_time,
-                      'temp': round(temp,2),
-                      'CO': round(SN1,2),
-                      'NO2': round(SN2,2),
-                      'SO2': round(SN3,2),
-                      'O3': round(SN4,2),
-                      'PM25': round(PM25,2)}
+                      'temp': temp,
+                      'SN1': SN1,
+                      'SN2': SN2,
+                      'SN3': SN3,
+                      'SN4': SN4,
+                      'PM25': PM25}
             msg = json.dumps(output)
 
         # Attach a new line character at the end of the message
@@ -88,6 +88,11 @@ if __name__ == '__main__':
                             strftime("%Y-%m-%d %H:%M:%S", gmtime(end_time)))
                 # Reset history status
                 client_handler.sending_status['history'] = [False, -1, -1]
+
+                # Here we need to use SQL query to look up history data. We have to do it in a smart way since there
+                # could be tens of thousands of data in a single table. If we JOIN two or three tables together, we
+                # can easily get a huge table and could also be very slow.
+
             elif client_handler.sending_status.get('real-time'):
                 try:
                     client_handler.send(msg)
