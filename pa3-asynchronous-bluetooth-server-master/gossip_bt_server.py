@@ -52,7 +52,8 @@ if __name__ == '__main__':
             if args.output_format == "csv":   #@@@ we dont use this form
                 msg = "%f, %d, %f, %f, %f, %f, %f, %f" % (real_time, "0", SN1, SN2, SN3, SN4, PM25)
             elif args.output_format == "json":
-                output = {'type': '1',       # 1=currently time / 2=history time
+                output = {'MAC' : '5C:31:3E:29:55:BC'
+                          'type': '1',       # 1=currently time / 2=history time
                           'time': epoch_time,
                           'temp': round(temp,2),
                           'CO': round(SN1,2),
