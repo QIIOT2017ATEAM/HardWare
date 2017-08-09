@@ -65,7 +65,7 @@ if __name__ == '__main__':
             r_msg = "{},{},{},{},{},{},{},{}".format('4e:71:9e:aa:bb:cc', epoch_time, temp, SN1, SN2, SN3, SN4, PM25)
         elif args.output_format == "json":
             # Create JSON message.
-            output = {'type': 'r'
+            output = {'type': 'r',
                       'MAC': '4e:71:9e:aa:bb:cc',
                       'time': round(epoch_time,2),
                       'temp': round(temp,2),
