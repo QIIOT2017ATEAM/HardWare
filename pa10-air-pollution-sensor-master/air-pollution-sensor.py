@@ -65,7 +65,8 @@ if __name__ == '__main__':
             r_msg = "{},{},{},{},{},{},{},{}".format('4e:71:9e:aa:bb:cc', epoch_time, temp, SN1, SN2, SN3, SN4, PM25)
         elif args.output_format == "json":
             # Create JSON message.
-            output = {'MAC': '4e:71:9e:aa:bb:cc',
+            output = {'type': 'r'
+                      'MAC': '4e:71:9e:aa:bb:cc',
                       'time': round(epoch_time,2),
                       'temp': round(temp,2),
                       'CO': round(SN1,2),
@@ -132,7 +133,8 @@ if __name__ == '__main__':
                 try:
                     # Add the leading character 'r' to indicate its a real-time data, and a newline character '\n'
                     # to indicate the end of the line
-                    client_handler.send('r' + r_msg + '\n')
+                    client_handler.send(r_msg + '\n') ########'r'+ delete
+                    #client_handler.send('r' + r_msg + '\n') ########'r'+ delete
                 except Exception as e:
                     BTError.print_error(handler=client_handler, error=BTError.ERR_WRITE, error_message=repr(e))
                     client_handler.handle_close()
