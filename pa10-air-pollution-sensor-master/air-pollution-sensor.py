@@ -68,10 +68,10 @@ if __name__ == '__main__':
             output = {'MAC': '4e:71:9e:aa:bb:cc',
                       'time': epoch_time,
                       'temp': temp,
-                      'SN1': SN1,
-                      'SN2': SN2,
-                      'SN3': SN3,
-                      'SN4': SN4,
+                      'CO': SN1,
+                      'NO2': SN2,
+                      'SO2': SN3,
+                      'O3': SN4,
                       'PM25': PM25}
             r_msg = json.dumps(output)
 
