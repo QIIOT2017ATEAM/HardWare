@@ -49,8 +49,7 @@ if __name__ == '__main__':
                           'NO2': round(SN2,2),
                           'SO2': round(SN3,2),
                           'O3': round(SN4,2),
-                          'PM25': round(PM25,2),
-                          'MAC': '4e:71:9e:aa:bb:cc'}
+                          'PM25': round(PM25,2)}
                 msg = json.dumps(output)
             try:
                 client_handler.send(msg + '\n')
