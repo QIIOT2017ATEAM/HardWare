@@ -13,8 +13,8 @@ class BTClientHandler(asyncore.dispatcher_with_send):
         asyncore.dispatcher_with_send.__init__(self, socket)
         self.server = server
         self.data = ""
-        self.sending_status = {'real-time': False, 'history': [False, -1, -1]}
-
+        self.sending_status = {'real-time': True, 'history': [False, -1, -1]} # False
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2
     def handle_read(self):
         try:
             data = self.recv(1024)
