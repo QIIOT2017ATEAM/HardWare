@@ -66,13 +66,13 @@ if __name__ == '__main__':
         elif args.output_format == "json":
             # Create JSON message.
             output = {'MAC': '4e:71:9e:aa:bb:cc',
-                      'time': epoch_time,
-                      'temp': temp,
-                      'CO': SN1,
-                      'NO2': SN2,
-                      'SO2': SN3,
-                      'O3': SN4,
-                      'PM25': PM25}
+                      'time': round(epoch_time,2),
+                      'temp': round(temp,2),
+                      'CO': round(SN1,2),
+                      'NO2': round(SN2,2),
+                      'SO2': round(SN3,2),
+                      'O3': round(SN4,2),
+                      'PM25': round(PM25,2)}
             r_msg = json.dumps(output)
 
         for client_handler in bt_server.get_active_client_handlers():
