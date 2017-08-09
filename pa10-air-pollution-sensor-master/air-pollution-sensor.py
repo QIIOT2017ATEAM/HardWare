@@ -62,10 +62,11 @@ if __name__ == '__main__':
         r_msg = ""
         if args.output_format == "csv":
             # Create CSV message "'real-time', time, temp, SN1, SN2, SN3, SN4, PM25".
-            r_msg = "{},{},{},{},{},{},{}".format(epoch_time, temp, SN1, SN2, SN3, SN4, PM25)
+            r_msg = "{},{},{},{},{},{},{},{}".format('4e:71:9e:aa:bb:cc', epoch_time, temp, SN1, SN2, SN3, SN4, PM25)
         elif args.output_format == "json":
             # Create JSON message.
-            output = {'time': epoch_time,
+            output = {'MAC': '4e:71:9e:aa:bb:cc',
+                      'time': epoch_time,
                       'temp': temp,
                       'SN1': SN1,
                       'SN2': SN2,
