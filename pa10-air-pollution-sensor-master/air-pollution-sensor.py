@@ -11,7 +11,7 @@ from threading import Thread
 from time import gmtime, sleep, strftime, time
 
 logger = logging.getLogger(__name__)
-
+logging.basicConfig(level=logging.INFO)
 
 if __name__ == '__main__':
     # Create option parser
