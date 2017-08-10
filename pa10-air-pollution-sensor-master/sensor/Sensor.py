@@ -149,7 +149,7 @@ class SensorServer(Thread):
             t0 = 510
             c0, c1 = self.read_sensor(0)
             # Channel 1 is not connected so we don't care about its output
-            temp = 1.22*c0 - t0
+            temp = c0 - t0
             logger.info("{} sensor outputs {} degree".format(self.sensor_names[0], temp))
             # Save output to the dict
             self.sensor_output[self.sensor_names[0]] = temp
@@ -184,7 +184,7 @@ class SensorServer(Thread):
 
             logger.info("Reading {} sensor...".format(self.sensor_names[5]))
             c10, c11 = self.read_sensor(5)
-            pm25 = 0.518+0.00274*(240.0*(1.22*c10)**6-2491.3*(1.22*c10)**5+9448.7*(1.22*c10)**4-14840.0*(1.22*c10)**3+10684.0*(1.22*c10)**2+2211.8*(1.22*c10)+7.9623)
+            pm25 = 0.518+0.00274*(240.0*(c10)**6-2491.3*(c10)**5+9448.7*(c10)**4-14840.0*(c10)**3+10684.0*(c10)**2+2211.8*(c10)+7.9623)
             logger.info("{} sensor outputs {} ppb".format(self.sensor_names[5], pm25))
             # Save output to the dict
             self.sensor_output[self.sensor_names[5]] = pm25
