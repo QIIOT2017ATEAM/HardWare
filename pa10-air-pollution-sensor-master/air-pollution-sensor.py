@@ -75,7 +75,7 @@ if __name__ == '__main__':
         elif args.output_format == "json":
             # Create JSON message.
             output = {'MAC': '4e:71:9e:aa:bb:cc',
-                      'time': round(epoch_time,2),
+                      'time': epoch_time,
                       'temp': round(temp,2),
                       'CO': round(SN1,2),
                       'NO2': round(SN2,2),
@@ -121,7 +121,7 @@ if __name__ == '__main__':
                     print "INFO: Sending results (0/0)...\r",
                     for row in results:
                         i += 1
-                        h_msg = "{},{},{},{},{},{},{},{}".format('4e:71:9e:aa:bb:cc', round(row[0],2), round(row[1],2), round(row[2],2), round(row[3],2), round(row[4],2), round(row[5],2), round(row[6],2))
+                        h_msg = "{},{},{},{},{},{},{},{}".format('4e:71:9e:aa:bb:cc', row[0], round(row[1],2), round(row[2],2), round(row[3],2), round(row[4],2), round(row[5],2), round(row[6],2))
                         client_handler.send('h' + h_msg + '\n')
 
                         print "INFO: Sending results ({}/{})...\r".format(i, n),
