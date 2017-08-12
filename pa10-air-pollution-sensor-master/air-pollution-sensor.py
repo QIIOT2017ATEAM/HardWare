@@ -53,18 +53,18 @@ if __name__ == '__main__':
         msg = ""
         sensor_output = sensor_server.get_sensor_output()
         epoch_time = int(time())                    # epoch time
-#        temp = sensor_output.get('Temp', -1)
-#        SN1 = sensor_output.get('SN1', -1)
-#        SN2 = sensor_output.get('SN2', -1)
-#        SN3 = sensor_output.get('SN3', -1)
-#        SN4 = sensor_output.get('SN4', -1)
-#        PM25 = sensor_output.get('PM25', -1)
-        temp = uniform(20, 30)      # random temperature
-        SN1 = uniform(0, 50)       # random SN1 value
-        SN2 = uniform(0, 1200)       # random SN2 value
-        SN3 = uniform(0, 80)       # random SN3 value
-        SN4 = uniform(0, 300)     # random SN4 value
-        PM25 = uniform(0, 35)    # random PM25 value
+        temp = sensor_output.get('Temp', -1)
+        SN1 = sensor_output.get('SN1', -1)
+        SN2 = sensor_output.get('SN2', -1)
+        SN3 = sensor_output.get('SN3', -1)
+        SN4 = sensor_output.get('SN4', -1)
+        PM25 = sensor_output.get('PM25', -1)
+#        temp = uniform(20, 30)      # random temperature
+#        SN1 = uniform(0, 50)       # random SN1 value
+#        SN2 = uniform(0, 1200)       # random SN2 value
+#        SN3 = uniform(0, 80)       # random SN3 value
+#        SN4 = uniform(0, 300)     # random SN4 value
+#        PM25 = uniform(0, 35)    # random PM25 value
 
 
 
