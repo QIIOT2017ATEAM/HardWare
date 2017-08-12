@@ -60,7 +60,7 @@ if __name__ == '__main__':
 #        SN4 = sensor_output.get('SN4', -1)
 #        PM25 = sensor_output.get('PM25', -1)
         temp = uniform(20, 30)      # random temperature
-        SN1 = uniform(0, 10)       # random SN1 value
+        SN1 = uniform(25, 75)       # random SN1 value
         SN2 = uniform(0, 200)       # random SN2 value
         SN3 = uniform(0, 10)       # random SN3 value
         SN4 = uniform(0, 130)     # random SN4 value
