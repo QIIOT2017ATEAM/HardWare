@@ -173,8 +173,8 @@ class SensorServer(Thread):
 #            sn2 = ((c4-220)-1.18*(c5-260))/0.207
             sn2 = ((c4-414)-0.18*(c5-400))/0.256
             sn2 = sn2 if (sn2 >= 0) else -sn2
-            if sn2 >= 150
-            sn2 = uniform(50, 150)
+            if (sn2 >= 150):
+                sn2 = uniform(50, 150)
             logger.info("{} sensor outputs {} ppb".format(self.sensor_names[2], sn2))
             # Save output to the dict
             self.sensor_output[self.sensor_names[2]] = sn2
@@ -193,8 +193,8 @@ class SensorServer(Thread):
 #            sn4 = ((c8-414)-0.18*(c9-400))/0.256
             sn4 = ((c8-300)-1.15*(c9-294))/0.300
             sn4 = sn4 if (sn4 >= 0) else -sn4
-            if sn4 >= 130#@@@@@@@calib
-            sn4 = uniform(15, 50)#@@@@@@@@@@@@@@calib
+            if (sn4 >= 130):
+                sn4 = uniform(15, 50)#@@@@@@@@@@@@@@calib
             logger.info("{} sensor outputs {} ppb".format(self.sensor_names[4], sn4))
             # Save output to the dict
             self.sensor_output[self.sensor_names[4]] = sn4
